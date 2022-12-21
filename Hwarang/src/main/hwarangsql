@@ -1,24 +1,26 @@
-create table hwarang_upboard( --게시판 DB
-    upboard_no number(38) primary key --게시번호
-    ,upboard_title varchar2(100) not null --제목
-    ,upboard_writer varchar2(100) not null--작성자
-    ,upboard_score varchar2(50) not null--평점
-    ,upboard_cont varchar(2000) not null--본문내용
-    ,upboard_photo1 varchar2(200) --사진1
-    ,upboard_photo2 varchar2(200) --사진2
-    ,upboard_photo3 varchar2(200) --사진3
-    ,upboard_photo4 varchar2(200) --사진4
-    ,upboard_photo5 varchar2(200) --사진5
-    ,upboard_view number(38) default 0--조회수
-    ,upboard_date date --등록일
+create table hwarangUpboard( --게시판 DB
+    upboardNo number(38) primary key --게시번호
+    ,upboardTitle varchar2(100) not null --제목
+    ,upboardWriter varchar2(100) not null--작성자
+    ,upboardScore varchar2(50) not null--평점
+    ,upboardCont varchar(2000) not null--본문내용
+    ,upboardPhoto1 varchar2(200) --사진1
+    ,upboardPhoto2 varchar2(200) --사진2
+    ,upboardPhoto3 varchar2(200) --사진3
+    ,upboardPhoto4 varchar2(200) --사진4
+    ,upboardPhoto5 varchar2(200) --사진5
+    ,upboardView number(38) default 0--조회수
+    ,upboardDate date --등록일
 );
 
-create sequence hwarang_upseq --게시판 시퀀스
+drop sequence hwarang_upseq;
+
+create sequence hwarangUpseq --게시판 시퀀스
 start with 1
 increment by 1 --1씩 증가
 nocache;
 
-select * from hwarang_upboard
+select * from hwarangUpboard
 
 
 commit;
