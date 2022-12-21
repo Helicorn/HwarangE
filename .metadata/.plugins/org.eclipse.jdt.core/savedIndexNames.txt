@@ -122,7 +122,6 @@ INDEX VERSION 1.131+C:\Users\msi\Documents\HwarangE\.metadata\.plugins\org.eclip
 593979344.index
 147137995.index
 1267403000.index
-52815325.index
 2605536674.index
 1883847825.index
 1748964058.index
