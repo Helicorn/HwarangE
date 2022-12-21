@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("api/")
-@RequiredArgsConstructor
+@RequiredArgsConstructor 
 // @CrossOrigin // CORS 허용
 public class HomeController {
 	private final UserRepository userRepository;
@@ -28,6 +28,11 @@ public class HomeController {
 	@GetMapping("home")
 	public String home() {
 		return "<h1>home</h1>";
+	}
+	
+	@RequestMapping("/")
+	public String index() {
+		return "/index";
 	}
 
 	// 유저 혹은 매니저 혹은 어드민 접근
