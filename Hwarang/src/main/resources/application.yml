@@ -1,0 +1,26 @@
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:com/myboot/mappers/**/*.xml
+server:
+  port: 8071
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    password: kong
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: kong
+  jpa:
+    database: oracle
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB

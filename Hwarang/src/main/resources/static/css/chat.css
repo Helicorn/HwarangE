@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.chat-messages{
+	border:1px solid black;
+	width: 40%;
+	min-width: 400px;
+	height:200px;
+	overflow: auto;
+}
