@@ -16,18 +16,26 @@ configurations {
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 dependencies {
+	implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA' //에러수정
+    implementation 'io.jsonwebtoken:jjwt-api:0.10.7'//jwt
+    implementation group: 'com.auth0', name: 'java-jwt', version: '3.18.1' //jwt
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.2.Final'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'
+	//implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+	//implementation 'com.oracle.database.jdbc:ojdbc8' //imple~
+	compile fileTree(dir : '/src/main/webapp/WEB-INF/lib', include: ['*.jar'])
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.7'//jwt
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.10.7'//jwt
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
