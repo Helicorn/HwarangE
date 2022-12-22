@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.hwarang.config.auth.PrincipalDetails;
 import com.hwarang.repository.UserRepository;
@@ -16,7 +16,7 @@ import com.hwarang.vo.Users;
 
 import lombok.RequiredArgsConstructor;
 
-@RestController
+@Controller
 @RequestMapping("api/")
 @RequiredArgsConstructor 
 // @CrossOrigin // CORS 허용
@@ -30,10 +30,7 @@ public class HomeController {
 		return "<h1>home</h1>";
 	}
 	
-	@RequestMapping("/")
-	public String index() {
-		return "/index";
-	}
+	
 
 	// 유저 혹은 매니저 혹은 어드민 접근
 	@GetMapping("user")

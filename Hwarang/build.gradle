@@ -4,7 +4,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
-group = 'com.Hwarang'
+group = 'com.hwarang'
 version = '2.7.1'
 sourceCompatibility = '8'
 
@@ -20,6 +20,8 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.60'
 	implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA' //에러수정
 	implementation 'io.jsonwebtoken:jjwt-api:0.10.7'//jwt
 	implementation group: 'com.auth0', name: 'java-jwt', version: '3.18.1' //jwt
@@ -33,7 +35,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok' 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
-    implementation fileTree(dir : '/src/main/webapp/WEB-INF/lib', include: ['*.jar'])    
+    //implementation fileTree(dir : '/src/main/webapp/WEB-INF/lib', include: ['*.jar'])    
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.7'//jwt
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.10.7'//jwt
     annotationProcessor 'org.projectlombok:lombok'

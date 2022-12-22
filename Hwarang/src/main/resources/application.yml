@@ -1,6 +1,6 @@
 mybatis:
   config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:com/myboot/mappers/**/*.xml
+  mapper-locations: classpath:com/hwarang/mappers/**/*.xml
 server:
   port: 8071
 spring:

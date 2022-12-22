@@ -1,6 +1,5 @@
 package com.hwarang.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +22,11 @@ import lombok.extern.slf4j.Slf4j;
 public class ChatController {
 	@Autowired
 	ChatService chatService;
+	
+	@RequestMapping("/")
+	public String index() {
+		return "/index";
+	}
 	
 	@RequestMapping("/chatlist")
 	public String chatlist() {
