@@ -1,18 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<script src="/js/jquery.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/chat.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.js"></script>
+<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
 <script>
-var Chat_roomId = ${param.roomId};
-</script>
-<meta charset="UTF-8">
-<title>chat room</title>
-<script>
+	var Chat_roomId = ${param.roomId};
+
 	function Chat_addMessage(writer,body){ //폼이 발송되기 전에 한번씩 실행. 즉, 엔터한번 칠때마다 실행
 		$.post(
 				'test/doAddMessage',
@@ -33,9 +22,13 @@ var Chat_roomId = ${param.roomId};
 	}
 	
 	function Chat_drawMessage(chatMessage){
-		var html = chatMessage.writer + ' : ' + chatMessage.body;
-		
-		$('.chat-messages').prepend('<div>'+html+'<div>');
+		//var html = chatMessage.writer + ' : ' + chatMessage.body;
+		var htmlone = chatMessage.writer;
+		var htmltwo = chatMessage.body;
+				
+		$('.chat-messages').append('<div class="circle"><div>');
+		$('.chat-messages').append('<div class="message-cloud-one">'+htmlone+'<div>');
+		$('.chat-messages').append('<div class="message-cloud-two">'+htmltwo+'<div>');
 	}
 	
 	var Chat_lastLoadedMessageId = 0;
@@ -84,22 +77,22 @@ var Chat_roomId = ${param.roomId};
 		form.body.focus();
 		
 		Chat_addMessage(writer,body);
+		
+		$('.chat-messages').scrollTop($('.chat-messages')[0].scrollHeight);
 	}
 </script>
-</head>
-<body>
 	<h1>${param.roomId}번채팅</h1>
-	<form onsubmit="submitChatMessageForm(this); return false;">
+	<form onsubmit="submitChatMessageForm(this); return false;">	
+	<br>
+	<div class="chat-messages">
+		
+	</div>
 	<div>
-		<input type="text" name="writer" placeholder="작성자" autocomplete="off" size="10">
+		<input type="text" name="writer" value="${nickname }" autocomplete="off" size="10" disabled>
 	
 		<input type="text" name="body" placeholder="내용" autocomplete="off" size="30">
 	
 		<input type="submit" value="작성">
-	</div>
-	<br>
-	<div class="chat-messages">
-		
 	</div>
 	</form>
 </body>

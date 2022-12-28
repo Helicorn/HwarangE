@@ -34,9 +34,10 @@ public class ChatController {
 	}
 	
 	@RequestMapping("/chat")
-	public String showRoom(int roomId, Model model, HttpServletRequest request) {
+	public String showRoom(int roomId, String nickname, Model model, HttpServletRequest request) {
 		roomId = Integer.parseInt(request.getParameter("roomId"));
 		model.addAttribute("roomId",roomId);
+		model.addAttribute("nickname",nickname);
 		return "/test/chat";
 	}
 	

@@ -7,3 +7,27 @@
 	height:200px;
 	overflow: auto;
 }
+.message-cloud-one{
+	border-radius: 4px;
+	width:auto;
+	height:16px;
+	margin:5px 5px 5px 53px;
+	padding:3px;
+	font-size:12px;
+}
+.message-cloud-two{
+	border:1px solid black;
+	border-radius: 4px;
+	width:auto;
+	height:24px;
+	margin:0px 5px 5px 55px;
+	padding:2px;
+}
+.circle{
+	float:left;
+	width:48px;
+	height:48px;
+	border: 1px solid black;
+	border-radius: 24px;
+	margin:5px 5px 5px 3px;
+}
