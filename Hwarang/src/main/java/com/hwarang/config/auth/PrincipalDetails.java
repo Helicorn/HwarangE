@@ -50,6 +50,7 @@ public class PrincipalDetails implements UserDetails {
         return true;
     }
 
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
@@ -61,4 +62,5 @@ public class PrincipalDetails implements UserDetails {
         return authorities;
     }
 
+    
 }

@@ -35,16 +35,18 @@ public class SecurityConfig {
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 				.formLogin().disable()
+			    .logout().permitAll().logoutSuccessUrl("/")
+			    .and()
 				.httpBasic().disable()
 				.apply(new MyCustomDsl()) // 커스텀 필터 등록
 				.and()
-				.authorizeRequests(authroize -> authroize.antMatchers("/api/user/**")
+				.authorizeRequests(authroize -> authroize.antMatchers("/user/**")
 						.access("hasRole('ROLE_USER') or hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
-						.antMatchers("/api/manager/**")
+						.antMatchers("/manager/**")
 						.access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
-						.antMatchers("/api/admin/**")
+						.antMatchers("/admin/**")
 						.access("hasRole('ROLE_ADMIN')")
-						.anyRequest().permitAll())
+						.antMatchers("/**").permitAll())
 				.build();
 	}
 
