@@ -21,7 +21,7 @@
 </script>
 <div class="loginbox">
 	<c:if test="${empty username }">
-	<form method="post" action="/login" onsubmit="return login_check();" enctype="application/json">
+	<form method="post" action="/loginok" onsubmit="return login_check();" enctype="application/json">
 		<input type="text" name="username" id="username" class="login_insertvalue" placeholder="ID">
 		<input type="password" name="password" id="password" class="login_insertvalue" placeholder="PW">
 		<input type="submit" name="login_submit" id="login_submit" value="로그인">
