@@ -16,6 +16,10 @@ import lombok.Setter;
 public class LoginRequestDto {
 	private String username;
 	private String password;
+	//public void setMsg(String string) {
+	//	// TODO Auto-generated method stub
+	//	
+	//}
 	public void setMsg(String string) {
 		// TODO Auto-generated method stub
 		

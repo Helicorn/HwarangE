@@ -35,13 +35,23 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			throws AuthenticationException {
 		
 		System.out.println("JwtAuthenticationFilter : 진입");
-		
+	
 		// request에 있는 username과 password를 파싱해서 자바 Object로 받기
 		ObjectMapper om = new ObjectMapper();
 		LoginRequestDto loginRequestDto = null;
 		
 		try {
-			loginRequestDto = om.readValue(request.getInputStream(), LoginRequestDto.class);
+			CachedBodyHttpServletRequest cachedBodyHttpServletRequest = new CachedBodyHttpServletRequest(request);
+			System.out.println(cachedBodyHttpServletRequest.getInputStream());
+			System.out.println(LoginRequestDto.class);
+			
+			 //String json = "{\"username\":\"member01\",\"password\":\"member01\"}";
+			//System.out.println(om.readValue(cachedBodyHttpServletRequest.getInputStream(), LoginRequestDto.class));
+			loginRequestDto = om.convertValue(cachedBodyHttpServletRequest.getInputStream(), LoginRequestDto.class); 
+			System.out.println(loginRequestDto);
+			//loginRequestDto = om.readValue(cachedBodyHttpServletRequest.getInputStream(), LoginRequestDto.class);
+			//loginRequestDto = om.readValue(cachedBodyHttpServletRequest.getInputStream(), LoginRequestDto.class);
+			//loginRequestDto = om.readValue(cachedBodyHttpServletRequest.getInputStream(), LoginRequestDto.class);
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error(e.getMessage());

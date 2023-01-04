@@ -47,28 +47,34 @@ public class LoginController {
         return new ModelAndView("/member/login");
 	
 	}
-	@RequestMapping("/login")
-	public String login_ok(@RequestParam String username, @RequestParam String password, HttpServletResponse response, HttpServletRequest request, Authentication authentication,
+	@RequestMapping("/login") //login 페이지를 아작스로 만들면 어떨까
+	public String login_ok(HttpServletResponse response, HttpServletRequest request, Authentication authentication,
 			@AuthenticationPrincipal PrincipalDetails userDetails) {	
-		PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
-		System.out.println("authentication:"+principalDetails.getUsername()); 
-		System.out.println("userDetails:"+userDetails.getUsername());
+//		PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
+//		System.out.println("authentication:"+principalDetails.getUsername()); 
+//		System.out.println("userDetails:"+userDetails.getUsername());
+//		
+//		//Cookie[] cookie = request.getCookies();
+//		//System.out.println("cookie"+cookie);
+//		//System.out.println("username"+username);
+//		//System.out.println("password"+password);
+//		//response.addCookie(cookie);
 		
-		Cookie[] cookie = request.getCookies();
-		System.out.println("cookie"+cookie);
-		System.out.println("username"+username);
-		System.out.println("password"+password);
-		//response.addCookie(cookie);
-		String username1 = request.getParameter("username");
-		String password1 = request.getParameter("password");
-		LoginRequestDto LRD = new LoginRequestDto();
-		LRD.setUsername(username1);
-		LRD.setPassword(password1);
 		
+		//@RequestParam String username, @RequestParam String password, 
+		
+		
+		
+//		//String username1 = request.getParameter("username");
+//		//String password1 = request.getParameter("password");
+//		LoginRequestDto LRD = new LoginRequestDto();
+//		LRD.setUsername(username);
+//		LRD.setPassword(password);
+//		
 		  return "/index";
 		
 	}
-	
+//	
 	@RequestMapping("/loginok")
 	public String loginok(HttpServletResponse response, HttpServletRequest request) {	
 
