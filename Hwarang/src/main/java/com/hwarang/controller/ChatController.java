@@ -23,11 +23,6 @@ public class ChatController {
 	@Autowired
 	ChatService chatService;
 	
-	@RequestMapping("/")
-	public String index() {
-		return "/index";
-	}
-	
 	@RequestMapping("/chatlist")
 	public String chatlist() {
 		return "/test/chatlist";

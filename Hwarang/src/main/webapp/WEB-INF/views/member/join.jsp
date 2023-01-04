@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<jsp:include page="/WEB-INF/views/includes/header.jsp" /> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" type="text/css" href="/css/join.css" />
 <hr>
 <script src="/js/jquery.js"></script>
@@ -54,7 +54,7 @@ function join_check(){
 </script>
 <article id = "join_article">
 <div class="joinbox">
-	<form method="post" action="join_ok" onsubmit="return join_check();">
+	<form method="post" action="joinok" onsubmit="return join_check();">
 		<div class="join_inputbox">
 			<input type="text" name="username" id="join_username" class="join_insertvalue" placeholder="아이디">
 		</div>

@@ -21,7 +21,8 @@ import com.hwarang.config.auth.PrincipalDetails;
 import com.hwarang.dto.LoginRequestDto;
 
 import lombok.RequiredArgsConstructor;
-
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 
@@ -38,10 +39,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		// request에 있는 username과 password를 파싱해서 자바 Object로 받기
 		ObjectMapper om = new ObjectMapper();
 		LoginRequestDto loginRequestDto = null;
+		
 		try {
 			loginRequestDto = om.readValue(request.getInputStream(), LoginRequestDto.class);
 		} catch (Exception e) {
 			e.printStackTrace();
+			log.error(e.getMessage());
 		}
 		
 		System.out.println("JwtAuthenticationFilter : "+loginRequestDto);
@@ -54,10 +57,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		
 		System.out.println("JwtAuthenticationFilter : 토큰생성완료");
 		
-
+        //PrincipalDetailsService의 loadUserByUsername()함수가 실행됨 
 		Authentication authentication = 
 				authenticationManager.authenticate(authenticationToken);
-		
+		//authㄷntication 객체가 session영역에 저장 > 로그인이 되었다는 뜻 
 		PrincipalDetails principalDetailis = (PrincipalDetails) authentication.getPrincipal();
 		System.out.println("Authentication : "+principalDetailis.getUser().getUsername());
 		return authentication;
