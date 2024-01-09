@@ -1,0 +1,33 @@
+<h1>설문조사 양식</h1>
+<p>모든 항목에 빠짐없이 체크해 주십시요.</p>
+<hr>
+<form>
+    <fieldset>
+        <legend>개인정보</legend><!--fieldset의 위쪽에 이름넣기-->
+        <p>이름<input type="text" placeholder="본명을 입력하세요"></p>
+        <p>이메일<input type="text" placeholder="메일을 입력하세요"></p>
+    </fieldset>
+    <fieldset>
+        <legend>설문</legend>
+        <p>연령대가 어떻게 되십니까?</p>
+        <label><input type="radio" value="1" name="age"> 10대</label>
+        <label><input type="radio" value="2" name="age"> 20대</label>
+        <label><input type="radio" value="3" name="age"> 30대</label>
+        <label><input type="radio" value="4" name="age"> 40대</label>
+        <label><input type="radio" value="5" name="age"> 50대</label>
+        <label><input type="radio" value="6" name="age"> 그 외</label>
+        <!--radio의 경우 하나의 문제로 묶기위해 name값을 같게해주어야 중복이 안된다.-->
+        <p>학원 선택시 기준은 어떻게 되시나요</p>
+        <label><input type="checkbox"> 위치</label>
+        <label><input type="checkbox"> 학원비</label>
+        <label><input type="checkbox"> 강사</label>
+        <label><input type="checkbox"> 시설</label>
+    </fieldset>
+    <fieldset>
+        <legend>기타 의견</legend>
+        <textarea></textarea>
+    </fieldset>
+    <input type="button" value="제출">
+    <hr>
+    <p>입력하시느라 수고하셨습니다</p>
+</form>
