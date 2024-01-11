@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+}
+body{
+    width: 100vh;
+    height: 100vh;
+}
+#chathead{
+    display: flex;
+    padding: 0 3vh ;
+    align-items: center;
+    height: 10vh;
+    display: flex;
+    background-color: white;
+}
+#chathead > img {
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    margin-right: 2vh;
+}
+#chatmain {
+    height: 75vh;
+    background-image: url("../images/dragon.jpeg");
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+#chating{
+    display: flex;
+    height: 15vh;
+}
+#chating > textarea {
+    width: 70vh;
+    height: 100%;
+    border: none;
+    resize: none;
+}
+#send{
+    background-color: rgba(137, 255, 165, 0.545);
+    display: flex;
+    font-size: calc( 20px + 20px );
+    color: black;
+    width: 30vh;
+    justify-content: center;
+    align-items: center;
+}
+#send:hover{
+    background-color:  rgba(137, 255, 164, 0.808);
+}
+p{
+    text-align: center;
+}
