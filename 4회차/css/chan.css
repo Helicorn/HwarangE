@@ -1,0 +1,41 @@
+body{
+    background-color: aqua;
+    text-align: center;
+}
+p{
+    font-size: 55px;
+    color: white;
+}
+#st1,#st2,#st3,#st4,#st5,#st6{
+    display: none;
+}
+@media screen and (min-width: 400px) and (max-width: 600px){
+    body{background-color: red;}
+    #st6{display: inline; color: rgb(222, 222, 0);}
+    #st1,#st2,#st3,#st4,#st5{display: none;}
+}
+@media screen and (min-width: 600px) and (max-width: 800px){
+    body{background-color: rgb(238, 255, 0);}
+    #st5{display: inline; color: rgb(8, 83, 0);}
+    #st1,#st2,#st3,#st4,#st6{display: none;}
+}
+@media screen and (min-width: 800px) and (max-width: 1000px){
+    body{background-color: rgb(13, 0, 255);}
+    #st4{display: inline; color: rgb(168, 2, 245);}
+    #st1,#st2,#st3,#st5,#st6{display: none;}
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+    body{background-color: rgb(0, 255, 225);}
+    #st3{display: inline; color: rgb(86, 0, 0);}
+    #st1,#st2,#st4,#st5,#st6{display: none;}
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px){
+    body{background-color: rgb(255, 0, 170);}
+    #st2{display: inline; color: brown;}
+    #st1,#st3,#st4,#st5,#st6{display: none;}
+}
+@media screen and (min-width: 1400px){
+    body{background-color: aqua;}
+    #st1{display: inline ;}
+    #st2,#st3,#st4,#st5,#st6{display: none;}
+}
