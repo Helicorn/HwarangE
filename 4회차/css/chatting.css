@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+}
+body{
+    width: 75vh;
+    height: 100vh;
+}
+#chathead{
+    display: flex;
+    padding: 0 3vh ;
+    align-items: center;
+    height: 10vh;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.536);
+}
+#chathead > img {
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    margin-right: 2vh;
+}
+#chatmain {
+    height: 75%;
+    background-image: url("../images/dragon.jpeg");
+    background-repeat : no-repeat;
+    background-size : cover;
+    border: 1px solid rgba(0, 0, 0, 0.536);
+}
+#chating{
+    display: flex;
+    height: 15vh;
+}
+#chating > textarea {
+    width: 70vh;
+    height: 100%;
+    border: none;
+    resize: none;
+}
+#send{
+    background-color: rgba(137, 255, 165, 0.545);
+    display: flex;
+    font-size: calc( 20px + 20px );
+    color: black;
+    width: 30vh;
+    justify-content: center;
+    align-items: center;
+}
+#send:hover{
+    background-color:  rgba(137, 255, 164, 0.808);
+}
+p{
+    text-align: center;
+}
+#sangmal{
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+.mal{
+    float: left;
+    position: relative;
+    align-items: flex-start;
+    list-style-type: none;
+    margin: 7px;
+    width: 55%;
+    background-color: rgb(126, 253, 126);
+    border-radius: 5px;
+    padding: 15px;
+}
+.mal:hover{
+    background-color: rgba(5, 254, 5, 0.625);
+}
+.mal2{
+    float: right;
+    position: relative;
+    margin-left: 45%;
+    list-style-type: none;
+    margin: 7px;
+    width: 55%;
+    background-color: rgba(233, 255, 68, 0.95);
+    border-radius: 5px;
+    padding: 15px;
+}
+.mal2:hover{
+    background-color: rgba(255, 255, 0, 0.837);
+}
