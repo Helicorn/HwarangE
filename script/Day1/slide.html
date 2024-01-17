@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #slide_ground{ /*이미지 띄울 캐러셀 크기 조정 및 사진 1개씩만 띄우기*/
+            height: 600px;
+            width: 600px;
+            overflow: hidden;
+        }
+        #slide_ground > #images{ /* 이미지 가로 정렬 */
+            display: flex;
+
+            transition: transform 0.2s;
+        }
+        #images > img{  /*이미지 크기 맞추기*/
+            height: 600px;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slide_ground">
+        <div id="images">
+            <img src="./images/pic1.jpeg" alt="">
+            <img src="./images/pic2.jpg" alt="">
+            <img src="./images/pic3.jpg" alt="">
+        </div>
+    </div>
+    
+    <input type="button" id="back" value="이전">
+    <input type="button" id="pi1" value="1">
+    <input type="button" id="pi2" value="2">
+    <input type="button" id="pi3" value="3">
+    <input type="button" id="next" value="다음">
+
+    <script>
+        const nextBtn=document.getElementById("next")
+        const pi1Btn=document.getElementById("pi1")
+        const pi2Btn=document.getElementById("pi2")
+        const pi3Btn=document.getElementById("pi3")
+        const backBtn=document.getElementById("back")
+        const carousel=document.getElementById("images")
+        //버튼들 마다 상수값 지정
+
+        let index=0;
+
+        nextBtn.addEventListener('click',()=>{
+            if(index == 2) index=0;
+            else index += 1;
+
+            images.style.transform=`translate3d(-${600*index}px,0,0)`;
+        });
+
+        pi1Btn.addEventListener('click',()=>{
+            if(index != 0 ) index = 0;
+
+            images.style.transform=`translate3d(-${600*index}px,0,0)`;
+        });
+        pi2Btn.addEventListener('click',()=>{
+            if(index != 1 ) index = 1;
+
+            images.style.transform=`translate3d(-${600*index}px,0,0)`;
+        });
+        pi3Btn.addEventListener('click',()=>{
+            if(index != 2 ) index = 2;
+
+            images.style.transform=`translate3d(-${600*index}px,0,0)`;
+        });
+
+        backBtn.addEventListener('click',()=>{
+            if(index == 0) index=2;
+            else index -= 1;
+
+            images.style.transform=`translate3d(-${600*index}px,0,0)`;
+        });
+    </script>
+</body>
+</html>

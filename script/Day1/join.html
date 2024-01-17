@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #joinmain{
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            width: 360px;
+            background-color: bisque;
+        }
+        #joinmain > p {
+            position: relative;
+            text-align: center;
+            margin-top : 15px;
+        }
+        #joinmain > input{
+            width: 290px;
+            margin: 3px 10px;
+            padding: 10px;
+        }
+        #joinmain > .ph{
+            width: 80px;
+            margin: 3px 10px;
+        }
+        #joinmain > select{
+            text-align: center;
+            width: 290px;
+            height: 40px;
+            margin: 3px 10px;
+        }
+        #joinmain > .sexse{
+            width: 70px;
+        }
+        #joinmain > #save{
+            width: 60px;
+            float: right;
+            border: 1px solid gray;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="joinmain">
+        <p>OZ회원가입</p>
+        <input type="text" id="mail" placeholder="Email을 입력해주세요">
+        <input type="text" id="name" placeholder="이름을 입력해주세요">
+        <input type="text" id="id" placeholder="아이디를 입력해주세요">
+        <input type="text" id="pw01" placeholder="비밀번호를 입력해주세요">
+        <input type="text" id="pw02" placeholder="비밀번호를 다시 입력해주세요">
+        <input type="text" class = "ph" id="ph01" value="010" readonly>
+        <input type="text" class = "ph" id="ph02" placeholder="가운데 4자리">
+        <input type="text" class = "ph" id="ph03" placeholder="마지막 4자리">
+        <select id="city">
+            <option value="서울">서울</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="전라도">전라도</option>
+            <option value="경상도">경상도</option>
+            <option value="충청도">충청도</option>
+            <option value="부산">부산</option>
+            <option value="제주">제주</option>
+        </select>
+        <input type="radio" class="sexse" name="gender" value="man">남성
+        <input type="radio" class="sexse" name="gender" value="woman">여성
+        <input type="button" value="저장" id="save" onclick="savedata()">
+    </div>
+
+    <script>
+        function savedata(){
+        const mail = document.getElementById("mail").value
+        const name = document.getElementById("name").value
+        const id = document.getElementById("id").value
+        const pw01 = document.getElementById("pw01").value
+        const pw02 = document.getElementById("pw02").value
+        const ph01 = document.getElementById("ph01").value
+        const ph02 = document.getElementById("ph02").value
+        const ph03 = document.getElementById("ph03").value
+        const city = document.getElementById("city").value
+        const gender = document.getElementsByName("gender")
+        var selected = Array.from(gender).find(radio => radio.checked);
+
+
+        console.log(mail)
+        console.log(name)
+        console.log(id)
+        console.log(pw01)
+        console.log(pw02)
+        console.log(ph01)
+        console.log(ph02)
+        console.log(ph03)
+        console.log(city)
+        console.log(selected.value)
+        }
+    </script>
+</body>
+</html>

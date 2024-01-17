@@ -1,0 +1,16 @@
+*{
+    color: red;
+}
+body{
+    text-align: center;
+    background-color: rgba(245, 198, 136, 0.549);
+}
+#info_navi > img{
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+}
+#point_navi > p{
+    color: black;
+    font-size: 18px;
+}
