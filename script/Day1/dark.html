@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드 만들기</title>
+    <style>
+        .darkmode{
+            background-color: black;
+        }
+    </style>
+</head>
+<body id="back">
+    <input type="button" value="흰" id="white" onclick="darkmode(2)">
+    <input type="button" value="검" id="black" onclick="darkmode(1)">
+    <script>
+        
+        function darkmode(n){
+            var body= document.getElementById("back");
+
+            if(n==1){
+                body.classList.add("darkmode");
+            }else{
+                body.classList.remove("darkmode");
+            }
+        }
+    </script>
+</body>
+</html>
