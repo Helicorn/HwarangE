@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "rank">
+    </p>
+    <script>
+        var a = prompt("중간고사 점수를 입력하세요")
+        const rank = document.getElementById("rank")
+        const box = document.createElement("rank")
+        if(a>=90){
+            box.textContent=`나의 기말고사는 ${a}점 학점은 A`
+            rank.append(box)
+        }else if(a>=80){
+            box.textContent=`나의 기말고사는 ${a}점 학점은 B`
+            rank.append(box)
+        }else if(a>=70){
+            box.textContent=`나의 기말고사는 ${a}점 학점은 C`
+            rank.append(box)
+        }else if(a>=60){
+            box.textContent=`나의 기말고사는 ${a}점 학점은 D`
+            rank.append(box)
+        }else{
+            box.textContent=`나의 기말고사는 ${a}점 학점은 F`
+            rank.append(box)
+        }
+    </script>
+</body>
+</html>

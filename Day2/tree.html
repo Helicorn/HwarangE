@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="starbox">
+        <h1>별 트리 찍기</h1>
+    </div>
+    <script>
+        document.write("1번 별<br>")
+        for(let i = 0; i<5; i+=1){
+            for(let j=0; j<=i; j+=1){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        document.write("2번 별<br>")
+        for(let i = 0; i<5; i+=1){
+            for(let j=0; j<=i; j+=1){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        for(let i = 5; i>0; i-=1){
+            for(let j=0; j<i; j+=1){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        document.write("3번 별<br>")
+        for(let i = 1; i<=5; i+=1){
+            for(let x = 1; x<=(10-(i*2-1))/2; x+=1){
+                document.write('&nbsp')
+            }
+            for(let j = 1; j<=i*2-1; j+=1){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        for(let i = 4; i>=1; i-=1){
+            for(let x = 1; x<=(10-(i*2-1))/2; x+=1){
+                document.write('&nbsp')
+            }
+            for(let j = 1; j<=i*2-1; j+=1){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>
